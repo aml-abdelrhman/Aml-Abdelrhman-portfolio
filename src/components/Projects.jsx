@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import CareStore from '../assets/images/CareStore.PNG';
 import seraCafe from '../assets/images/sera.PNG';
 import MORK from '../assets/images/MORK..PNG';
 import ECY from '../assets/images/ECY.PNG';
@@ -10,6 +11,14 @@ import CRUDS from '../assets/images/CRUDS.PNG';
 
 export default function Projects() {
   const projects = [
+      { 
+      title: 'Care Store website', 
+      img: CareStore, 
+      tech: 'React • Tailwind CSS.',
+      description: 'A modern e-commerce web app built with React, Vite, and Tailwind CSS, offering a smooth shopping experience with product browsing, wishlist, and cart features.',
+      demo: 'https://aml-abdelrhman.github.io/Care-Store/',
+      code: 'https://github.com/aml-abdelrhman/Care-Store.git'
+    },
     { 
       title: 'Sera café website', 
       img: seraCafe, 

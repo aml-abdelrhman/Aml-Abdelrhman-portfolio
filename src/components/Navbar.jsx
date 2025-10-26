@@ -62,7 +62,7 @@ export default function Navbar(){
               </ScrollLink>
             ))}
             <a
-              href="Aml-Abdelrhman-CV.pdf"
+              href="CV-Aml.pdf"
               download
               className="px-4 py-2 rounded-md bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition-colors duration-300"
              >

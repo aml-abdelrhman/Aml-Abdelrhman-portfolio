@@ -29,9 +29,13 @@ export default function Hero() {
             <a href="#projects" className="btn bg-accent text-white text-sm px-4 py-2 rounded-md shadow-sm hover:shadow-md transition">
               View Projects
             </a>
-           <a href="Aml-Abdelrhman-CV.pdf" download className="btn bg-accent text-white">📄 
-             Download CV
-           </a>
+            <a
+              href="CV-Aml.pdf"
+              download
+              className="px-4 py-2 rounded-md bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition-colors duration-300"
+             >
+              Download CV
+            </a>
           </div>
         </motion.div>
 
