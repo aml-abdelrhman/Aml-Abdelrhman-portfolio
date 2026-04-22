@@ -31,7 +31,9 @@ export default function Hero() {
             </a>
             <a
               href="Aml-Abdelrhman-CV.pdf"
-              download
+              download="Aml-Abdelrhman-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-md bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition-colors duration-300"
              >
               Download CV

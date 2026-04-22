@@ -24,9 +24,9 @@ export default function Footer() {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9 }}
-        className="py-10 bg-slate-100/70 dark:bg-slate-900/80 text-gray-700 dark:text-gray-300 relative"
+        className="relative py-10 text-gray-700 bg-slate-100/70 dark:bg-slate-900/80 dark:text-gray-300"
       >
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col items-center justify-between max-w-6xl gap-6 px-4 mx-auto md:flex-row">
           <div className="flex gap-6">
             {links.map((link, idx) => (
               <motion.a
@@ -34,7 +34,7 @@ export default function Footer() {
                 href={link.href}
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="hover:text-pink-500 transition-colors duration-300 font-medium"
+                className="font-medium transition-colors duration-300 hover:text-pink-500"
               >
                 {link.label}
               </motion.a>
@@ -62,15 +62,17 @@ export default function Footer() {
           <motion.div whileHover={{ scale: 1.05 }}>
             <a
               href="Aml-Abdelrhman-CV.pdf"
-              download
-              className="px-4 py-2 rounded-md bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition-colors duration-300"
+              download="Aml-Abdelrhman-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 font-semibold text-white transition-colors duration-300 bg-pink-500 rounded-md shadow-lg hover:bg-pink-600"
              >
               Download CV
             </a>
           </motion.div>
         </div>
 
-        <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="mt-6 text-sm text-center text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} Aml Abdelrhman. All rights reserved.
         </div>
       </motion.footer>
