@@ -8,10 +8,66 @@ import ECY from '../assets/images/ECY.PNG';
 import saudiRestaurant from '../assets/images/saudi restaurant.PNG';
 import Delivery from '../assets/images/delivery.PNG';
 import CRUDS from '../assets/images/CRUDS.PNG';
+ import NewProject8 from '../assets/images/etech.png';
+ import NewProject9 from '../assets/images/nest-js.png';
+ import NewProject10 from '../assets/images/real-state.png';
+ import NewProject11 from '../assets/images/shop.png';
+ import NewProject12 from '../assets/images/real-state-2.png';
+ import NewProject13 from '../assets/images/warm.png';
+// import NewProject14 from '../assets/images/project14.png';
+
 
 export default function Projects() {
   const projects = [
-      { 
+    { 
+      title: 'ETech Educational Website', 
+      img: NewProject8, 
+      tech: 'Next.js • Tailwind CSS • React Query •Axios • TypeScript • Framer Motion • Next-inlet • zustand •dark/light mode ',
+      description: 'A professional educational website featuring interactive learning modules and a modern UI.',
+      demo: 'https://etetch-tm3e.vercel.app/',
+      code: 'https://github.com/aml-abdelrhman/etetch.git'
+    },
+    { 
+      title: 'Augest Website ', 
+      img: NewProject11, 
+      tech: 'Next.js • Tailwind CSS • TypeScript • Axios • Next-inlet • React Query • Next-inlet • ',
+      description: 'A professional electronics e-commerce platform featuring a modern UI , product categories, and seamless navigation.',
+      demo: 'https://augest-district.vercel.app/',
+      code: 'https://github.com/aml-abdelrhman/augest-district.git'
+    },
+    { 
+      title: 'Hemma Real Estate', 
+      img: NewProject12, 
+      tech: 'Next.js • TypeScript • Framer Motion • CSS • Next-inlet • React Query',
+      description: 'A comprehensive real estate system featuring available property listings, detailed property views, and an integrated booking system for visits.',
+      demo: 'https://hemma-real-state.vercel.app/',
+      code: 'https://github.com/aml-abdelrhman/Hemma-real-state.git'
+    },
+    { 
+      title: 'E-commerce Shop', 
+      img: NewProject9, 
+      tech: 'React • JavaScript • scss • Redux • MongoDB',
+      description: 'A dynamic e-commerce application focused on performance, providing a smooth user experience from browsing to checkout.',
+      demo: 'https://nextjs-ecommerce-blv4.vercel.app/#',
+      code: 'https://github.com/aml-abdelrhman/nextjs-ecommerce.git'
+    },
+    { 
+      title: 'Real Estate website', 
+      img: NewProject10, 
+      tech: 'React • CSS • Framer Motion ',
+      description: 'A premium real estate listing portal with interactive components and optimized search functionality for high-end properties.',
+      demo: 'https://real-state-theta-hazel.vercel.app/',
+      code: 'https://github.com/aml-abdelrhman/real-state.git'
+    },
+    { 
+      title: 'WarmDecor Interior Store', 
+      img: NewProject13, 
+      tech: 'Next.js • Tailwind CSS • TypeScript • React Query • Axios',
+      description: 'A full-featured interior design e-commerce project integrated with a robust API, cart management system, and secure checkout process.',
+      demo: 'https://warmdecor-dk19.vercel.app/',
+      code: 'https://github.com/aml-abdelrhman/WARMDECOR.git'
+    },
+    { 
       title: 'Care Store website', 
       img: CareStore, 
       tech: 'React • Tailwind CSS.',
@@ -44,17 +100,17 @@ export default function Projects() {
       code: 'https://github.com/aml-abdelrhman/ECY-Educational-Web.git'
     },
     { 
-      title: 'مطعم المذاق السعودي', 
+      title: 'Saudi Taste Restaurant', 
       img: saudiRestaurant, 
       tech: 'React • Vite',
-      description: 'Restaurant website displaying menu, reservations, and location information.',
+      description: 'A cultural restaurant website showcasing authentic menus, online reservations, and location services.',
       demo: 'https://aml-abdelrhman.github.io/restaurant-website/',
       code: 'https://github.com/aml-abdelrhman/restaurant-website.git'
     },
-        { 
+    { 
       title: 'Delivery X website', 
       img: Delivery, 
-      tech: 'Javacsript • Bootstrap.',
+      tech: 'Javascript • Bootstrap.',
       description: 'A modern responsive website for Delivery-x showcasing about information, services, and contact info.',
       demo: ' https://aml-abdelrhman.github.io/Deliver-X/',
       code: 'https://github.com/aml-abdelrhman/Deliver-X.git'

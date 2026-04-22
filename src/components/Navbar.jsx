@@ -37,7 +37,7 @@ export default function Navbar(){
           <ScrollLink key={l.id} to={l.id} smooth duration={500} className="inline-block cursor-pointer transition-all duration-500 ease-in-out hover:text-accent hover:scale-110 hover:font-bold hover:tracking-wide">{l.label}</ScrollLink>
 
           ))}
-          <a href="/CV.pdf" download className="btn bg-accent text-white">Download CV</a>
+          <a href="Aml-Abdelrhman-CV.pdf" download className="btn bg-accent text-white">Download CV</a>
           <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="p-2 rounded-md">
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
@@ -62,7 +62,7 @@ export default function Navbar(){
               </ScrollLink>
             ))}
             <a
-              href="CV-Aml.pdf"
+              href="Aml-Abdelrhman-CV.pdf"
               download
               className="px-4 py-2 rounded-md bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition-colors duration-300"
              >

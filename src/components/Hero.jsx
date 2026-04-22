@@ -30,7 +30,7 @@ export default function Hero() {
               View Projects
             </a>
             <a
-              href="CV-Aml.pdf"
+              href="Aml-Abdelrhman-CV.pdf"
               download
               className="px-4 py-2 rounded-md bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition-colors duration-300"
              >
