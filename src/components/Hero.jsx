@@ -1,73 +1,111 @@
-import React from 'react';
-import { motion } from "framer-motion";
-import Typewriter from './Typewriter';
+import React from 'react'
+import { motion } from 'framer-motion'
+import Typewriter from './Typewriter'
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center">
-      <div className="max-w-6xl mx-auto px-4 py-24 flex flex-col lg:flex-row items-center gap-12">
+    <section
+      id="home"
+      className="relative flex items-center min-h-screen overflow-hidden"
+    >
+      {/* Radial background glow */}
+      <div className="absolute top-[20%] left-[55%] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(201,169,110,0.06)_0%,transparent_70%)] pointer-events-none rounded-full" />
 
-        
+      <div className="container grid items-center grid-cols-1 gap-16 pt-24 md:grid-cols-2">
+
+        {/* Left — text */}
         <motion.div
-          initial={{ x: -90, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="flex-1"
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+          className="text-center md:text-left"
         >
+          {/* Eyebrow */}
+          <p className="font-[var(--font-body)] text-[0.72rem] tracking-[0.3em] uppercase text-[var(--text-accent)] mt-12 md:mt-0 mb-6 flex items-center justify-center md:justify-start gap-3">
+            <span className="inline-block w-[30px] h-[1px] bg-[var(--accent)]" />
+            Front-End Developer
+          </p>
 
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">
-            AML ABDELRHMAN — Front-End Developer
+          {/* Main heading */}
+          <h1 className="font-[var(--font-display)] text-[clamp(3.5rem,7vw,6rem)] font-light leading-none text-[var(--text-primary)] mb-2">
+            Aml
           </h1>
-          <div className="text-base md:text-lg text-slate-600 dark:text-slate-300 mb-4 max-w-xl">
-            Crafting modern, responsive, and high-performance web experiences that delight users.
-            <div className="mt-2 text-purple-500">
-             <Typewriter words={['React.js','JavaScript','HTML5','CSS3','Tailwind CSS','Bootstrap','Framer Motion','Redux','Vite','Git & GitHub',]} />
-            </div>
+          <h1 className="font-[var(--font-display)] text-[clamp(3.5rem,7vw,6rem)] font-light italic leading-none text-[var(--text-accent)] mb-10">
+            Abdelrhman
+          </h1>
+
+          {/* Typewriter */}
+          <p className="font-[var(--font-body)] text-[0.9rem] text-[var(--text-secondary)] mb-3">
+            Currently working with
+          </p>
+          <div className="text-[var(--text-accent)] italic mb-12 font-[var(--font-display)] text-[1.4rem]">
+            <Typewriter words={['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Redux']} />
           </div>
 
-          <div className="flex gap-3">
-            <a href="#projects" className="btn bg-accent text-white text-sm px-4 py-2 rounded-md shadow-sm hover:shadow-md transition">
-              View Projects
+          {/* Description */}
+          <p className="font-[var(--font-body)] text-[0.9rem] leading-[1.8] text-[var(--text-secondary)] max-w-[420px] mb-12 mx-auto md:mx-0">
+            Crafting modern, responsive, and high-performance web experiences
+            that blend functionality with refined aesthetics.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap justify-center gap-4 md:justify-start">
+            <a href="#projects" className="btn-primary">
+              View Work
+              <span className="text-[0.7rem]">↘</span>
             </a>
             <a
               href="Aml-Abdelrhman-CV.pdf"
-              download="Aml-Abdelrhman-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-md bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition-colors duration-300"
-             >
+              download
+              className="btn-ghost"
+            >
               Download CV
             </a>
           </div>
         </motion.div>
 
+        {/* Right — portrait + decoration */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, scale: 1.1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex-1 flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+          className="relative flex items-center justify-center"
         >
+          {/* Rotating border */}
           <motion.div
-            className="w-64 h-64 relative rounded-xl shadow-2xl overflow-visible"
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            className="absolute w-[280px] h-[280px] md:w-[340px] md:h-[340px] border border-transparent border-l-[var(--accent)] border-r-[var(--accent)] rounded-full opacity-30"
+          />
+
+          {/* Photo frame */}
+          <div className="w-[240px] h-[300px] md:w-[280px] md:h-[340px] relative rounded-[4px] overflow-hidden border border-[var(--border)]">
+            <div className="w-full h-full bg-[url(/aml.jpeg)] bg-cover bg-[center_top] grayscale-[20%] contrast-[1.1]" />
+            {/* gold overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(201,169,110,0.15)]" />
+          </div>
+
+          {/* Floating badge */}
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute bottom-5 -right-2 bg-[var(--bg-secondary)] border border-[var(--border)] p-[0.75rem_1.25rem] rounded-[4px]"
           >
-            <div
-              className="absolute inset-0 rounded-xl bg-cover bg-center z-10"
-              style={{ backgroundImage: 'url(https://images.pexels.com/photos/3861951/pexels-photo-3861951.jpeg)' }}
-            ></div>
-
-            <div className="absolute inset-0 rounded-xl bg-animated-gradient opacity-50 z-20 pointer-events-none"></div>
-
-            <motion.div
-              className="absolute -inset-6 rounded-xl bg-white/20 blur-3xl z-0 pointer-events-none"
-              animate={{ rotate: [0, 40, -40, 0] }}
-              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            ></motion.div>
+            <p className="font-[var(--font-display)] text-[1.8rem] text-[var(--accent)] leading-none">1+</p>
+            <p className="font-[var(--font-body)] text-[0.65rem] tracking-[0.15em] uppercase text-[var(--text-secondary)]">Years Exp.</p>
           </motion.div>
         </motion.div>
-
       </div>
+
+      {/* Scroll hint */}
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-dim)] font-[var(--font-body)] text-[0.65rem] tracking-[0.2em] uppercase"
+      >
+        <span>Scroll</span>
+        <span className="text-[0.7rem]">↓</span>
+      </motion.div>
     </section>
-  );
+  )
 }

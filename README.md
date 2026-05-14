@@ -1,12 +1,52 @@
-# React + Vite
+# ✍️ Portfolio Redesign — 2026 Edition
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="./public/preview-banner.png" alt="Portfolio Preview" width="100%" />
+  
+  <h3>Refined Digital Experiences with a Dark Luxury Aesthetic</h3>
+  
+  <p align="center">
+    <a href="https://github.com/aml-abdelrhman">
+      <img src="https://img.shields.io/badge/Developer-Aml%20Abdelrhman-c9a96e?style=for-the-badge" alt="Developer" />
+    </a>
+    <img src="https://img.shields.io/badge/Tech-Next.js%2015-white?style=for-the-badge&logo=nextdotjs" alt="Next.js" />
+    <img src="https://img.shields.io/badge/UI-Tailwind%20%2B%20Framer%20Motion-38BDF8?style=for-the-badge&logo=tailwindcss" alt="UI" />
+  </p>
+</div>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎨 Design Philosophy
+Inspired by **minimalist luxury**, this portfolio focuses on typography, subtle animations, and a high-end editorial feel. It is built to showcase technical proficiency while maintaining a professional "Business Pioneer" aesthetic.
 
-## Expanding the ESLint configuration
+- **Primary Palette**: Deep Blacks (`#0a0a0a`) & Warm Gold Accents (`#c9a96e`).
+- **Typography**: *Cormorant Garamond* for elegance and *DM Sans* for readability.
+- **Experience**: Smooth Framer Motion transitions and custom particle backgrounds.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Tech Stack
+This project utilizes the latest frontend ecosystem (2026 standard):
+
+| Category | Technologies |
+| :--- | :--- |
+| **Framework** | Next.js 15 (App Router), React 19 |
+| **Styling** | Tailwind CSS, Sass (SCSS), Glassmorphism |
+| **Animations** | Framer Motion |
+| **State & Logic** | Zustand, TanStack Query v5, Zod |
+| **Backend Integration** | Supabase, Auth.js |
+| **Performance** | Vite, Lighthouse Optimized |
+
+---
+
+## 📂 Project Structure
+```bash
+portfolio-redesign/
+├── components/
+│   ├── Hero.jsx        # Full-screen introduction
+│   ├── Skills.jsx      # Technical arsenal grid
+│   ├── Projects.jsx    # Filterable luxury grid
+│   └── Footer.jsx      # Responsive navigation & socials
+├── styles/
+│   └── index.css       # Global design tokens & themes
+└── assets/             # High-quality assets & CV

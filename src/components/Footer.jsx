@@ -1,81 +1,196 @@
-import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion";
+import React from 'react'
+import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { Link as ScrollLink } from 'react-scroll'
+
+const navLinks = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+]
 
 export default function Footer() {
-  const links = [
-    { label: "Home", href: "#home" },
-    { label: "About me", href: "#About me" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
-  ];
-
-  const social = [
-    { icon: <FaGithub />, href: "https://github.com/aml-abdelrhman", label: "GitHub" },
-    { icon: <FaLinkedin />, href: "https://linkedin.com/in/aml-abdelrhman-8b849a372", label: "LinkedIn" },
-  ];
-
   return (
-    <div className="relative">
-      <div className="border-t border-gray-300 dark:border-gray-700 w-full mb-[-1px]" />
-
-      <motion.footer
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-        className="relative py-10 text-gray-700 bg-slate-100/70 dark:bg-slate-900/80 dark:text-gray-300"
-      >
-        <div className="flex flex-col items-center justify-between max-w-6xl gap-6 px-4 mx-auto md:flex-row">
-          <div className="flex gap-6">
-            {links.map((link, idx) => (
-              <motion.a
-                key={idx}
-                href={link.href}
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="font-medium transition-colors duration-300 hover:text-pink-500"
-              >
-                {link.label}
-              </motion.a>
-            ))}
+    <footer style={{
+      background: 'var(--bg-secondary)',
+      borderTop: '1px solid var(--border)',
+      padding: '4rem 0 2.5rem',
+    }}>
+      <div className="container">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <div className="brand-logo-container">
+              <div style={{
+                width: 36, height: 36,
+                border: '1px solid var(--accent)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontFamily: 'var(--font-display)',
+                fontSize: '1.1rem',
+                color: 'var(--accent)',
+              }}>A</div>
+              <span style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.85rem',
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: 'var(--text-secondary)',
+              }}>Aml Abdelrhman</span>
+            </div>
+            <p style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.95rem',
+              color: 'var(--text-dim)',
+              lineHeight: 1.8,
+              maxWidth: 240,
+              margin: '0 auto',
+            }}>
+              Front-End Developer crafting refined digital experiences.
+            </p>
           </div>
 
-          <div className="flex gap-4 mr-40">
-            {social.map((s, idx) => (
-              <motion.a
-                key={idx}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 250 }}
-                className="text-2xl hover:text-pink-500 hover:drop-shadow-[0_0_8px_rgba(236,72,153,0.7)] transition-all"
+          <nav className="footer-nav">
+            <p style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.75rem',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'var(--text-dim)',
+              marginBottom: '0.5rem',
+            }}>Navigation</p>
+            {navLinks.map(l => (
+              <ScrollLink
+                key={l.id}
+                to={l.id}
+                smooth
+                duration={600}
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.9rem',
+                  color: 'var(--text-secondary)',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  transition: 'color 0.3s',
+                  letterSpacing: '0.05em',
+                }}
+                className="footer-link"
               >
-                {s.icon}
-              </motion.a>
+                {l.label}
+              </ScrollLink>
             ))}
-          </div>
+          </nav>
 
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <div className="footer-socials">
+            <div style={{ display: 'flex', gap: '0.75rem' }}>
+              {[
+                { icon: FaGithub, href: 'https://github.com/aml-abdelrhman', label: 'GitHub' },
+                { icon: FaLinkedin, href: 'https://linkedin.com/in/aml-abdelrhman-8b849a372', label: 'LinkedIn' },
+              ].map(s => {
+                const Icon = s.icon
+                return (
+                  <motion.a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    whileHover={{ scale: 1.1 }}
+                    style={{
+                      width: 38, height: 38,
+                      border: '1px solid var(--border)',
+                      borderRadius: '2px',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: 'var(--text-secondary)',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s',
+                    }}
+                    className="social-link"
+                  >
+                    <Icon style={{ fontSize: '0.9rem' }} />
+                  </motion.a>
+                )
+              })}
+            </div>
+
             <a
               href="Aml-Abdelrhman-CV.pdf"
-              download="Aml-Abdelrhman-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 font-semibold text-white transition-colors duration-300 bg-pink-500 rounded-md shadow-lg hover:bg-pink-600"
-             >
-              Download CV
+              download
+              className="btn-primary"
+              style={{ fontSize: '0.8rem', padding: '0.6rem 1.25rem' }}
+            >
+              Download CV ↓
             </a>
-          </motion.div>
+          </div>
         </div>
 
-        <div className="mt-6 text-sm text-center text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Aml Abdelrhman. All rights reserved.
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Aml Abdelrhman. All rights reserved.</p>
+          <p>Designed & Built with ♥</p>
         </div>
-      </motion.footer>
-    </div>
-  );
+      </div>
+
+      <style>{`
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          gap: 3rem;
+          align-items: start;
+          margin-bottom: 4rem;
+        }
+        .brand-logo-container {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          marginBottom: 1.25rem;
+        }
+        .footer-nav {
+          display: flex;
+          flex-direction: column;
+          gap: 0.85rem;
+          align-items: center;
+        }
+        .footer-socials {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 1.5rem;
+        }
+        .footer-bottom {
+          border-top: 1px solid var(--border);
+          padding-top: 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          font-family: var(--font-body);
+          font-size: 0.85rem;
+          color: var(--text-dim);
+          letter-spacing: 0.05em;
+        }
+        .footer-link:hover { color: var(--accent) !important; }
+        .social-link:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+        
+        @media (max-width: 768px) {
+          .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            text-align: center;
+          }
+          .brand-logo-container {
+            justify-content: center;
+            margin-bottom: 1rem;
+          }
+          .footer-socials {
+            align-items: center;
+          }
+          .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+          }
+        }
+      `}</style>
+    </footer>
+  )
 }

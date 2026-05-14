@@ -1,54 +1,90 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react'
+import { motion } from 'framer-motion'
+
+const highlights = [
+  { label: 'Projects', value: '13+' },
+  { label: 'Technologies', value: '15+' },
+  { label: 'Experience', value: '1+ Yrs' },
+]
 
 export default function About() {
   return (
-    <section
-      id="About me"
-      className="relative py-20 bg-white/80 dark:bg-gray-900/70 backdrop-blur-md"
-    >
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: -70 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-extrabold mb-8 text-gray-800 dark:text-white tracking-tight"
-        >
-          About Me
-        </motion.h2>
+    <section id="about" className="relative py-20 lg:py-32 overflow-hidden bg-[var(--bg-secondary)]">
+      {/* Decorative line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-30" />
 
-        <motion.p
-          initial={{ opacity: 0, y: 70 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.5 }}
-          className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto"
-        >
-          I am a passionate <span className="font-semibold text-pink-500">Frontend Developer</span> 
-          and web designer with hands-on experience building 
-          <span className="font-semibold text-blue-500"> modern, responsive, and user-friendly websites</span>.  
-          I specialize in <span className="text-blue-500 font-medium">React.js</span>, 
-          <span className="text-sky-500 font-medium"> Tailwind CSS</span>, 
-          <span className="text-purple-500 font-medium"> Bootstrap</span>, 
-          <span className="text-yellow-500 font-medium"> JavaScript (ES6+)</span>, 
-          <span className="text-orange-500 font-medium"> HTML5</span>, 
-          <span className="text-blue-700 font-medium"> CSS3</span>, 
-          <span className="text-pink-400 font-medium"> Framer Motion</span>, 
-          <span className="text-indigo-500 font-medium"> Redux</span>, 
-          <span className="text-green-500 font-medium"> Vite</span>, 
-          <span className="text-teal-500 font-medium"> React Router</span>, 
-          <span className="text-purple-400 font-medium"> Axios</span>, 
-          <span className="text-red-500 font-medium"> REST APIs & JSON</span>, and 
-          <span className="text-gray-500 font-medium"> Git & GitHub</span> for version control.  
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-24 items-center">
 
-          I have worked on multiple personal and collaborative projects, 
-          including landing pages, e-commerce websites, portfolio websites, dashboards, and interactive UI components.  
-          Each project allowed me to sharpen my skills in performance optimization, accessibility, responsive layouts, 
-          smooth animations, and engaging user experiences.
+          {/* Left — heading block */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            <p className="section-subtitle">About me</p>
+            <h2 className="section-title text-[2.5rem] lg:text-[3.5rem] leading-tight">
+              Crafting <em style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Digital</em><br />
+              Experiences
+            </h2>
+            <div className="mx-auto lg:mx-0 divider" />
 
-          I am continuously learning new tools and trends to deliver creative, functional, and visually 
-          appealing designs that help businesses and individuals stand out online.
-        </motion.p>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 mt-10 lg:flex lg:flex-col lg:gap-8">
+              {highlights.map((h, i) => (
+                <motion.div
+                  key={h.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="flex flex-col items-center gap-2 lg:flex-row lg:items-baseline lg:gap-4"
+                >
+                  <span className="font-[var(--font-display)] text-[2rem] lg:text-[2.5rem] text-[var(--accent)] font-light leading-none">{h.value}</span>
+                  <span className="font-[var(--font-body)] text-[0.6rem] lg:text-[0.72rem] tracking-[0.15em] uppercase text-[var(--text-dim)]">{h.label}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right — text + skills chips */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center lg:text-left"
+          >
+            <p className="font-[var(--font-body)] text-base lg:text-lg leading-[1.8] text-[var(--text-secondary)] mb-6">
+              I am a passionate{' '}
+              <span className="text-[var(--text-accent)] font-[var(--font-display)] text-[1.1rem] italic">
+                Front-End Developer
+              </span>{' '}
+              with hands-on experience building modern, responsive, and user-friendly websites.
+              I focus on bridging beautiful design with clean, performant code.
+            </p>
+            <p className="font-[var(--font-body)] text-[0.95rem] leading-[1.8] text-[var(--text-secondary)] mb-10">
+              I have worked on multiple personal and collaborative projects — from landing pages
+              and e-commerce platforms to dashboards. Each project deepened my expertise in performance optimization, accessibility, responsive layouts,
+              smooth animations, and engaging user experiences.
+            </p>
+
+            {/* Tech tags */}
+            <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+              {['React.js','Next.js','TypeScript','Tailwind CSS','Framer Motion','Redux','Vite','Axios','REST APIs','Git & GitHub'].map(tech => (
+                <span key={tech} className="tag">{tech}</span>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="flex justify-center mt-10 lg:justify-start">
+              <a href="#contact" className="btn-primary">Get In Touch</a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
-  );
+  )
 }

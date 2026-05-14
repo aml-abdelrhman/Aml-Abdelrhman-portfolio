@@ -3,6 +3,33 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
+const contacts = [
+  {
+    icon: FaGithub,
+    label: 'GitHub',
+    value: 'aml-abdelrhman',
+    url: 'https://github.com/aml-abdelrhman',
+  },
+  {
+    icon: FaLinkedin,
+    label: 'LinkedIn',
+    value: 'aml-abdelrhman',
+    url: 'https://linkedin.com/in/aml-abdelrhman-8b849a372',
+  },
+  {
+    icon: FaEnvelope,
+    label: 'Email',
+    value: 'amlabdelrhman960@gmail.com',
+    url: 'https://mail.google.com/mail/?view=cm&fs=1&to=amlabdelrhman960@gmail.com',
+  },
+  {
+    icon: FaWhatsapp,
+    label: 'WhatsApp',
+    value: '+201019484346',
+    url: 'https://wa.me/201019484346',
+  },
+]
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sending, setSending] = useState(false)
@@ -14,115 +41,204 @@ export default function Contact() {
     e.preventDefault()
     setSending(true)
     try {
-      await emailjs.send(
-        'service_gwgpibp',
-        'template_33hbt8c',
-        form,
-        'uLdUc3VE0kQDYBMZZ'
-      )
+      await emailjs.send('service_j271jqg', 'template_gj2flzj', form, 'SbDomgQQVDv-sjahf')
       alert('Message sent successfully!')
       setForm({ name: '', email: '', message: '' })
-    } catch (error) {
-      alert('Failed to send message, try again later.')
-      console.error(error)
+    } catch (err) {
+      console.error('EmailJS Error:', err);
+      alert('Failed to send message. Please try again.')
     } finally {
       setSending(false)
     }
   }
 
-  const contacts = [
-    { icon: <FaGithub size={30} />, label: 'GitHub', url: 'https://github.com/aml-abdelrhman' },
-    { icon: <FaLinkedin size={30} />, label: 'LinkedIn', url: 'https://linkedin.com/in/aml-abdelrhman-8b849a372' },
-    { icon: <FaEnvelope size={30} />, label: 'Email', url: "https://mail.google.com/mail/?view=cm&fs=1&to=amlabdelrhman960@gmail.com" },
-    { icon: <FaWhatsapp size={30} />, label: 'WhatsApp', url: 'https://wa.me/01063229052' },
-  ]
-
   return (
-    <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900/40">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900 dark:text-white text-center">
-          Contact
-        </h2>
+    <section id="contact" style={{ background: 'var(--bg-primary)' }}>
+      <div className="container">
 
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="flex flex-col gap-6 md:w-1/3">
-            {contacts.map((c, idx) => (
-              <motion.a
-                key={idx}
-                href={c.url}
-                target="_blank"
-                rel="noreferrer"
-                whileHover={{ scale: 1.05, backgroundColor: '#ec4899', color: 'white' }}
-                className="flex items-center gap-4 p-4 border rounded-md
-                           bg-white dark:bg-slate-800
-                           text-gray-900 dark:text-white
-                           shadow-md transition-all duration-300"
-              >
-                {c.icon}
-                <span className="font-semibold">{c.label}</span>
-              </motion.a>
-            ))}
-          </div>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ textAlign: 'center', marginBottom: '5rem' }}
+        >
+          <p className="section-subtitle">Let's work together</p>
+          <h2 className="section-title">
+            Get In{' '}
+            <em style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Touch</em>
+          </h2>
+          <div className="divider divider-center" />
+        </motion.div>
 
-          {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="flex-1 flex flex-col gap-6 items-center"
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1.5fr',
+          gap: '5rem',
+          alignItems: 'start',
+        }}>
+
+          {/* Left — contact links */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '0' }}
           >
-            {['name', 'email', 'message'].map((field, idx) => (
-              <motion.div
-                key={field}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="w-full"
-              >
-                {field !== 'message' ? (
-                  <input
-                    name={field}
-                    type={field === 'email' ? 'email' : 'text'}
-                    value={form[field]}
-                    onChange={handleChange}
-                    placeholder={field === 'name' ? 'Your name' : 'Email'}
-                    required
-                    className="w-full p-4 border rounded-md text-center
-                               text-gray-900 dark:text-gray-800
-                               bg-white
-                               placeholder-gray-400 dark:placeholder-gray-600
-                               focus:border-pink-500 focus:scale-105 focus:outline-none
-                               transition-all duration-300"
-                  />
-                ) : (
-                  <textarea
-                    name={field}
-                    value={form[field]}
-                    onChange={handleChange}
-                    placeholder="Message"
-                    rows={6}
-                    required
-                    className="w-full p-4 border rounded-md text-center
-                               text-gray-900 dark:text-gray-800
-                               bg-white
-                               placeholder-gray-400 dark:placeholder-gray-600
-                               focus:border-pink-500 focus:scale-105 focus:outline-none
-                               transition-all duration-300"
-                  />
-                )}
-              </motion.div>
-            ))}
+            <p style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.9rem',
+              color: 'var(--text-secondary)',
+              lineHeight: 1.8,
+              marginBottom: '2.5rem',
+            }}>
+              I'm always open to new opportunities and collaborations.
+              Whether you have a project in mind or just want to say hello — feel free to reach out.
+            </p>
 
-            <motion.button
-              type="submit"
-              disabled={sending}
-              whileHover={{ scale: 1.05, backgroundColor: '#db2777' }}
-              className="w-full md:w-1/3 px-6 py-3 rounded-md bg-pink-500 text-white font-semibold shadow-lg transition-all duration-300"
-            >
-              {sending ? 'Sending...' : 'Send Message'}
-            </motion.button>
-          </form>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {contacts.map((c, i) => {
+                const Icon = c.icon
+                return (
+                  <motion.a
+                    key={c.label}
+                    href={c.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      padding: '1.25rem 0',
+                      borderBottom: '1px solid var(--border)',
+                      textDecoration: 'none',
+                      color: 'var(--text-secondary)',
+                      transition: 'all var(--transition)',
+                    }}
+                    className="contact-link"
+                  >
+                    <Icon style={{ fontSize: '1.1rem', color: 'var(--text-dim)', flexShrink: 0, transition: 'color var(--transition)' }} className="contact-icon" />
+                    <div>
+                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-dim)', marginBottom: '0.1rem' }}>{c.label}</p>
+                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem' }}>{c.value}</p>
+                    </div>
+                    <span style={{ marginLeft: 'auto', fontSize: '0.75rem', opacity: 0.4 }}>↗</span>
+                  </motion.a>
+                )
+              })}
+            </div>
+          </motion.div>
+
+          {/* Right — form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {[
+                { name: 'name',    type: 'text',  placeholder: 'Your Name'    },
+                { name: 'email',   type: 'email', placeholder: 'Your Email'   },
+              ].map(field => (
+                <div key={field.name}>
+                  <label style={{
+                    display: 'block',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.68rem',
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: 'var(--text-dim)',
+                    marginBottom: '0.6rem',
+                  }}>{field.placeholder}</label>
+                  <input
+                    name={field.name}
+                    type={field.type}
+                    value={form[field.name]}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.875rem 1rem',
+                      background: 'var(--bg-card)',
+                      border: '1px solid var(--border)',
+                      borderRadius: 'var(--radius)',
+                      color: 'var(--text-primary)',
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.9rem',
+                      outline: 'none',
+                      transition: 'border-color var(--transition)',
+                    }}
+                    className="form-input"
+                  />
+                </div>
+              ))}
+
+              <div>
+                <label style={{
+                  display: 'block',
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.68rem',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  color: 'var(--text-dim)',
+                  marginBottom: '0.6rem',
+                }}>Message</label>
+                <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  style={{
+                    width: '100%',
+                    padding: '0.875rem 1rem',
+                    background: 'var(--bg-card)',
+                    border: '1px solid var(--border)',
+                    borderRadius: 'var(--radius)',
+                    color: 'var(--text-primary)',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '0.9rem',
+                    outline: 'none',
+                    resize: 'vertical',
+                    transition: 'border-color var(--transition)',
+                  }}
+                  className="form-input"
+                />
+              </div>
+
+              <motion.button
+                type="submit"
+                disabled={sending}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-primary"
+                style={{ alignSelf: 'flex-start', cursor: sending ? 'wait' : 'pointer' }}
+              >
+                {sending ? 'Sending...' : 'Send Message'}
+                {!sending && <span style={{ fontSize: '0.7rem' }}>→</span>}
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
       </div>
+
+      <style>{`
+        .contact-link:hover { color: var(--text-primary) !important; }
+        .contact-link:hover .contact-icon { color: var(--accent) !important; }
+        .form-input:focus { border-color: var(--accent) !important; }
+        @media (max-width: 768px) {
+          #contact .container > div:last-child {
+            grid-template-columns: 1fr !important;
+            gap: 3rem !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }
