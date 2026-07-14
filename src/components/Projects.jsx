@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -17,6 +16,9 @@ import shop2 from '../assets/images/shop.png'
 import NewProject12 from '../assets/images/real-state-2.png'
 import NewProject13 from '../assets/images/warm.png'
 import AdminDash from '../assets/images/admindash.png' 
+import MedicalPlatform from '../assets/images/medical-platform.png'
+import NagdStore from '../assets/images/nagd-store.png'
+import OtaibiLaw from '../assets/images/otaibi-law.png'
 import aljada from '../assets/images/aljada.png' 
 import pioneers from '../assets/images/pioneers2.png' 
 import saudiRestaurant from '../assets/images/saudi restaurant.PNG'
@@ -27,6 +29,34 @@ import saudiRestaurant from '../assets/images/saudi restaurant.PNG'
 const projects = [
 
   {
+    title: 'Medical Appointment Booking Platform',
+    img: MedicalPlatform,
+    tech: ['Laravel', 'React', 'TypeScript', 'TanStack Query', 'MySQL', 'i18next (AR/EN)'],
+    category: 'Full-Stack',
+    description: 'A complete medical booking platform with a Laravel backend and a React/TypeScript frontend. Includes separate admin and doctor dashboards, bilingual (Arabic/English) support with full RTL, and Cloudinary-powered image handling. Frontend deployed on Vercel, backend and MySQL database on Railway.',
+    demo: 'https://clinic-frontend-7bvewwhms-1s-projects-9f2444d6.vercel.app/',
+    codeFrontend: 'https://github.com/aml-abdelrhman/clinic-frontend',
+    codeBackend: 'https://github.com/aml-abdelrhman/clinic-backend',
+  },
+  {
+    title: 'Nagd Store',
+    img: NagdStore,
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Zustand', 'Tailwind CSS'],
+    category: 'Full-Stack',
+    description: 'A full-stack e-commerce platform built with Next.js and Supabase, featuring product listings, cart, wishlist, and an admin dashboard with analytics.',
+    demo: 'https://nagd-store.vercel.app/ar',
+    code: 'https://github.com/aml-abdelrhman/nagd-store',
+  },
+  {
+    title: 'Al-Otaibi Law Firm',
+    img: OtaibiLaw,
+    tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+    category: 'Full-Stack',
+    description: 'A complete law firm platform built with Next.js and Supabase, covering service listings, case inquiries, and a full content management backend.',
+    demo: 'https://otaibi-law-q395.vercel.app/',
+    code: 'https://github.com/aml-abdelrhman/Otaibi-law',
+  },
+  {
     title: 'Business Pioneers Solution',
     img: pioneers,
     tech: ['React', 'TypeScript', 'Supabase', 'Tailwind CSS', 'PostgreSQL'],
@@ -35,15 +65,6 @@ const projects = [
     description: 'Ranked 2nd Place in the "Business Pioneers Holding" hackathon by Monafis. Awarded Best UI/UX Design for a production-grade B2B SaaS dashboard with real-time data sync and Deep Dark theme.',
     demo: 'https://fullstack-pioneers.vercel.app/',
     code: 'https://github.com/aml-abdelrhman/fullstack-pioneers',
-  },
-  {
-    title: 'Alshefaa – HealthTech Platform',
-    img: AdminDash,
-    tech: ['React 19', 'TypeScript', 'Supabase', 'TanStack Query', 'Zustand'],
-    category: 'Full-Stack',
-    description: 'Scalable SPA with Electronic Health Records, appointment scheduling, and a medical marketplace. CI/CD via GitHub Actions with automated Vercel deployments.',
-    demo: 'https://alshefaa-dashbord-fullstack.vercel.app/',
-    code: 'https://github.com/aml-abdelrhman/alshefaa-dashbord-fullstack',
   },
   {
     title: 'ETech Educational Website',
@@ -286,9 +307,10 @@ export default function Projects() {
                       background: 'rgba(10,10,10,0.85)',
                       backdropFilter: 'blur(4px)',
                       display: 'flex',
+                      flexWrap: 'wrap',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: '1rem',
+                      gap: '0.75rem',
                     }}
                   >
                     {p.demo && (
@@ -330,6 +352,46 @@ export default function Projects() {
                         }}
                         onClick={e => e.stopPropagation()}
                       >Source</a>
+                    )}
+                    {p.codeFrontend && (
+                      <a
+                        href={p.codeFrontend}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          padding: '0.6rem 1.25rem',
+                          border: '1px solid var(--border)',
+                          color: 'var(--text-secondary)',
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '0.7rem',
+                          letterSpacing: '0.15em',
+                          textTransform: 'uppercase',
+                          textDecoration: 'none',
+                          borderRadius: '2px',
+                          transition: 'all 0.3s',
+                        }}
+                        onClick={e => e.stopPropagation()}
+                      >Frontend</a>
+                    )}
+                    {p.codeBackend && (
+                      <a
+                        href={p.codeBackend}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          padding: '0.6rem 1.25rem',
+                          border: '1px solid var(--border)',
+                          color: 'var(--text-secondary)',
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '0.7rem',
+                          letterSpacing: '0.15em',
+                          textTransform: 'uppercase',
+                          textDecoration: 'none',
+                          borderRadius: '2px',
+                          transition: 'all 0.3s',
+                        }}
+                        onClick={e => e.stopPropagation()}
+                      >Backend</a>
                     )}
                   </motion.div>
                 </div>

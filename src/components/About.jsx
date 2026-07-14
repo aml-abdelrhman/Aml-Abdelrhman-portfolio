@@ -60,20 +60,22 @@ export default function About() {
             <p className="font-[var(--font-body)] text-base lg:text-lg leading-[1.8] text-[var(--text-secondary)] mb-6">
               I am a passionate{' '}
               <span className="text-[var(--text-accent)] font-[var(--font-display)] text-[1.1rem] italic">
-                Front-End Developer
+                Full-Stack Developer
               </span>{' '}
-              with hands-on experience building modern, responsive, and user-friendly websites.
-              I focus on bridging beautiful design with clean, performant code.
+              with hands-on experience building complete web platforms — from database design
+              and backend logic to modern, responsive, user-friendly interfaces.
             </p>
             <p className="font-[var(--font-body)] text-[0.95rem] leading-[1.8] text-[var(--text-secondary)] mb-10">
-              I have worked on multiple personal and collaborative projects — from landing pages
-              and e-commerce platforms to dashboards. Each project deepened my expertise in performance optimization, accessibility, responsive layouts,
-              smooth animations, and engaging user experiences.
+              I have worked on multiple personal and collaborative projects — from a full-stack
+              medical booking platform with separate admin and doctor dashboards, to e-commerce
+              platforms and business dashboards. Each project deepened my expertise in API design,
+              database architecture, authentication flows, deployment pipelines, and crafting
+              polished, high-performance user experiences.
             </p>
 
             {/* Tech tags */}
             <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
-              {['React.js','Next.js','TypeScript','Tailwind CSS','Framer Motion','Redux','Vite','Axios','REST APIs','Git & GitHub'].map(tech => (
+              {['React.js','Next.js','TypeScript','Laravel','Supabase','MySQL','PostgreSQL','Tailwind CSS','REST APIs','Git & GitHub'].map(tech => (
                 <span key={tech} className="tag">{tech}</span>
               ))}
             </div>

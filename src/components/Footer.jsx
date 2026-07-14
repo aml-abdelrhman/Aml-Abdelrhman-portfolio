@@ -46,7 +46,7 @@ export default function Footer() {
               maxWidth: 240,
               margin: '0 auto',
             }}>
-              Front-End Developer crafting refined digital experiences.
+              Full-Stack Developer crafting refined digital experiences.
             </p>
           </div>
 

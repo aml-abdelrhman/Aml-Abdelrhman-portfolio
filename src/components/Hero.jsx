@@ -23,7 +23,7 @@ export default function Hero() {
           {/* Eyebrow */}
           <p className="font-[var(--font-body)] text-[0.72rem] tracking-[0.3em] uppercase text-[var(--text-accent)] mt-12 md:mt-0 mb-6 flex items-center justify-center md:justify-start gap-3">
             <span className="inline-block w-[30px] h-[1px] bg-[var(--accent)]" />
-            Front-End Developer
+            Full-Stack Developer
           </p>
 
           {/* Main heading */}
@@ -39,13 +39,13 @@ export default function Hero() {
             Currently working with
           </p>
           <div className="text-[var(--text-accent)] italic mb-12 font-[var(--font-display)] text-[1.4rem]">
-            <Typewriter words={['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Redux']} />
+            <Typewriter words={['React.js', 'Next.js', 'Laravel', 'TypeScript', 'MySQL', 'Supabase']} />
           </div>
 
           {/* Description */}
           <p className="font-[var(--font-body)] text-[0.9rem] leading-[1.8] text-[var(--text-secondary)] max-w-[420px] mb-12 mx-auto md:mx-0">
-            Crafting modern, responsive, and high-performance web experiences
-            that blend functionality with refined aesthetics.
+            Building complete web platforms — from database design and APIs
+            to polished, high-performance interfaces.
           </p>
 
           {/* CTAs */}

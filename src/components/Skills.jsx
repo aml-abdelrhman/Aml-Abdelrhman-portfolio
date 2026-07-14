@@ -1,10 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { 
-  FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaBootstrap, FaGitAlt, FaSass, FaDatabase, FaLock, FaShieldAlt
+  FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaBootstrap, FaGitAlt, FaSass, FaDatabase, FaLock, FaShieldAlt, FaLaravel, FaPhp
 } from 'react-icons/fa'
 import { 
-  SiTailwindcss, SiFramer, SiRedux, SiVite, SiNextdotjs, SiTypescript, SiAxios
+  SiTailwindcss, SiFramer, SiRedux, SiVite, SiNextdotjs, SiTypescript, SiAxios, SiMysql, SiSupabase, SiPostgresql
 } from 'react-icons/si'
 // استبدال المكتبة التي تسببت في الخطأ بمكتبة Hi المستقرة جداً
 import { HiLightningBolt, HiOutlineDatabase } from 'react-icons/hi'
@@ -28,7 +28,14 @@ const skills = [
   { name: 'Sass / SCSS',    icon: FaSass,       color: '#CC6699', level: 90 },
   { name: 'Bootstrap',      icon: FaBootstrap,  color: '#7952B3', level: 85 },
 
-  // Auth & Backend Integration
+  // Backend & Database
+  { name: 'Laravel',        icon: FaLaravel,    color: '#FF2D20', level: 88 },
+  { name: 'PHP',             icon: FaPhp,        color: '#777BB4', level: 86 },
+  { name: 'Supabase',       icon: SiSupabase,   color: '#3ECF8E', level: 90 },
+  { name: 'MySQL',           icon: SiMysql,      color: '#4479A1', level: 88 },
+  { name: 'PostgreSQL',     icon: SiPostgresql, color: '#4169E1', level: 85 },
+
+  // Auth & Integration
   { name: 'Auth.js (NextAuth)', icon: FaLock,     color: '#FFFFFF', level: 93 }, 
   { name: 'Zod (Validation)',  icon: FaShieldAlt, color: '#3068B7', level: 94 },
   { name: 'Git & GitHub',   icon: FaGitAlt,     color: '#F05032', level: 92 },
