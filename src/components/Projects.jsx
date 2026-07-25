@@ -25,7 +25,6 @@ import saudiRestaurant from '../assets/images/saudi restaurant.PNG'
 import AlAmmar from '../assets/images/al-ammar.png'
 
 
-
 const projects = [
 {
     title: 'Al-Ammar Family Heritage',
