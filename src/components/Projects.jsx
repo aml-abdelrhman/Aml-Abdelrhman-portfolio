@@ -22,12 +22,21 @@ import OtaibiLaw from '../assets/images/otaibi-law.png'
 import aljada from '../assets/images/aljada.png' 
 import pioneers from '../assets/images/pioneers2.png' 
 import saudiRestaurant from '../assets/images/saudi restaurant.PNG'
-
+import AlAmmar from '../assets/images/al-ammar.png'
 
 
 
 const projects = [
-
+{
+    title: 'Al-Ammar Family Heritage',
+    img: AlAmmar,
+    tech: ['Laravel', 'PHP', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    category: 'Full-Stack',
+    description: 'A cultural heritage and genealogy platform for a prominent Saudi family, built with a Laravel/PHP backend and a Next.js/TypeScript frontend. Features responsive components, custom layouts, and a fully Arabic interface.',
+    demo: 'https://al-ammar-frontend-wheat.vercel.app/',
+    codeFrontend: 'https://github.com/aml-abdelrhman/al-ammar-frontend',
+    codeBackend: 'https://github.com/aml-abdelrhman/al-ammar-backend',
+  },
   {
     title: 'Medical Appointment Booking Platform',
     img: MedicalPlatform,
