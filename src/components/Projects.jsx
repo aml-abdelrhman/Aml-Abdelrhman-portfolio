@@ -13,7 +13,7 @@ import NewProject9 from '../assets/images/nest-js2.png'
 import NewProject10 from '../assets/images/real-state.png'
 import NewProject11 from '../assets/images/shop2.png'
 import shop2 from '../assets/images/shop.png' 
-import NewProject12 from '../assets/images/real-state-2.png'
+import NewProject12 from '../assets/images/hemma.png'
 import NewProject13 from '../assets/images/warm.png'
 import AdminDash from '../assets/images/admindash.png' 
 import MedicalPlatform from '../assets/images/medical-platform.png'
@@ -26,16 +26,45 @@ import AlAmmar from '../assets/images/al-ammar.png'
 
 
 const projects = [
-{
+  // ── الأوائل الأربعة ──────────────────────────────────────────────────────
+  {
     title: 'Al-Ammar Family Heritage',
     img: AlAmmar,
     tech: ['Laravel', 'PHP', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     category: 'Full-Stack',
     description: 'A cultural heritage and genealogy platform for a prominent Saudi family, built with a Laravel/PHP backend and a Next.js/TypeScript frontend. Features responsive components, custom layouts, and a fully Arabic interface.',
-    demo: 'https://al-ammar-frontend-wheat.vercel.app/',
+    demo: 'https://www.alammar.family/',
     codeFrontend: 'https://github.com/aml-abdelrhman/al-ammar-frontend',
     codeBackend: 'https://github.com/aml-abdelrhman/al-ammar-backend',
   },
+  {
+    title: 'Al-Jadda Real Estate',
+    img: aljada,
+    tech: ['Next.js', 'TypeScript', 'React', 'CSS Modules', 'i18n (AR/EN)'],
+    category: 'Real Estate',
+    description: 'A bilingual (Arabic/English) real estate platform built with Next.js App Router. Features interactive property listings, multi-slide about section, and full RTL/LTR support.',
+    demo: 'https://the1stavenue.com.sa/',
+    code: 'https://github.com/aml-abdelrhman/real-state',
+  },
+  {
+    title: 'Hemma Real Estate',
+    img: NewProject12,
+    tech: ['Next.js', 'TypeScript', 'Framer Motion'],
+    category: 'Real Estate',
+    description: 'A comprehensive real estate system with property listings and integrated booking system.',
+    demo: 'https://hemmh.sa/',
+    code: 'https://github.com/aml-abdelrhman/Hemma-real-state.git',
+  },
+  {
+    title: 'Augest Website',
+    img: NewProject11,
+    tech: ['Next.js', 'TypeScript', 'React Query'],
+    category: 'E-Commerce',
+    description: 'A professional electronics e-commerce platform with modern UI and product categories.',
+    demo: 'https://augustdst.com/',
+    code: 'https://github.com/aml-abdelrhman/augest-district.git',
+  },
+  // ── باقي المشاريع بترتيبها الأصلي ──────────────────────────────────────
   {
     title: 'Medical Appointment Booking Platform',
     img: MedicalPlatform,
@@ -84,33 +113,6 @@ const projects = [
     code: 'https://github.com/aml-abdelrhman/etetch.git',
   },
   {
-    title: 'Augest Website',
-    img: NewProject11,
-    tech: ['Next.js', 'TypeScript', 'React Query'],
-    category: 'E-Commerce',
-    description: 'A professional electronics e-commerce platform with modern UI and product categories.',
-    demo: 'https://augest-district.vercel.app/',
-    code: 'https://github.com/aml-abdelrhman/augest-district.git',
-  },
-  {
-    title: 'Hemma Real Estate',
-    img: NewProject12,
-    tech: ['Next.js', 'TypeScript', 'Framer Motion'],
-    category: 'Real Estate',
-    description: 'A comprehensive real estate system with property listings and integrated booking system.',
-    demo: 'https://hemma-real-state.vercel.app/',
-    code: 'https://github.com/aml-abdelrhman/Hemma-real-state.git',
-  },
-  // {
-  //   title: 'E-commerce Shop',
-  //   img: NewProject9,
-  //   tech: ['React', 'Redux', 'SCSS'],
-  //   category: 'E-Commerce',
-  //   description: 'A dynamic e-commerce app providing a smooth user experience from browsing to checkout.',
-  //   demo: 'https://nextjs-ecommerce-blv4.vercel.app/',
-  //   code: 'https://github.com/aml-abdelrhman/nextjs-ecommerce.git',
-  // },
-  {
     title: 'WarmDecor Interior Store',
     img: NewProject13,
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
@@ -129,15 +131,6 @@ const projects = [
     code: 'https://github.com/aml-abdelrhman/Care-Store.git',
   },
   {
-    title: 'Al-Jadda Real Estate',
-    img: aljada,
-    tech: ['Next.js', 'TypeScript', 'React', 'CSS Modules', 'i18n (AR/EN)'],
-    category: 'Real Estate',
-    description: 'A bilingual (Arabic/English) real estate platform built with Next.js App Router. Features interactive property listings, multi-slide about section, and full RTL/LTR support.',
-    demo: 'https://real-state-theta-hazel.vercel.app/',
-    code: 'https://github.com/aml-abdelrhman/real-state',
-  },
-    {
     title: 'Augest District – Design Marketplace',
     img: shop2,
     tech: ['Next.js 15', 'TypeScript', 'Zustand', 'TanStack Query', 'NextAuth', 'Tailwind CSS'],
@@ -192,15 +185,6 @@ const projects = [
     demo: 'https://aml-abdelrhman.github.io/Deliver-X/',
     code: 'https://github.com/aml-abdelrhman/Deliver-X.git',
   },
-  // {
-  //   title: 'Real Estate website', // Distinct from Hemma Real Estate
-  //   img: NewProject10,
-  //   tech: ['React', 'CSS', 'Framer Motion'],
-  //   category: 'Real Estate',
-  //   description: 'A premium real estate listing portal with interactive components and optimized search functionality for high-end properties.',
-  //   demo: 'https://real-state-theta-hazel.vercel.app/',
-  //   code: 'https://github.com/aml-abdelrhman/real-state.git',
-  // },
   {
     title: 'CRUDS Product System',
     img: CRUDS,
@@ -212,7 +196,7 @@ const projects = [
   },
 ]
 
-const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))].sort()
+const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))]
 
 export default function Projects() {
   const [active, setActive] = useState('All')
