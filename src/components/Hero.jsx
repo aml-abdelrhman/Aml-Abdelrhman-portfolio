@@ -55,7 +55,7 @@ export default function Hero() {
               <span className="text-[0.7rem]">↘</span>
             </a>
             <a
-              href="Aml-Abdelrhman-CV.pdf"
+              href="aml_abdelrhman_cv_fullstack.pdf"
               download
               className="btn-ghost"
             >
@@ -91,7 +91,7 @@ export default function Hero() {
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute bottom-5 -right-2 bg-[var(--bg-secondary)] border border-[var(--border)] p-[0.75rem_1.25rem] rounded-[4px]"
           >
-            <p className="font-[var(--font-display)] text-[1.8rem] text-[var(--accent)] leading-none">1+</p>
+            <p className="font-[var(--font-display)] text-[1.8rem] text-[var(--accent)] leading-none">2+</p>
             <p className="font-[var(--font-body)] text-[0.65rem] tracking-[0.15em] uppercase text-[var(--text-secondary)]">Years Exp.</p>
           </motion.div>
         </motion.div>

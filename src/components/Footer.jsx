@@ -114,7 +114,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="Aml-Abdelrhman-CV.pdf"
+              href="aml_abdelrhman_cv_fullstack.pdf"
               download
               className="btn-primary"
               style={{ fontSize: '0.8rem', padding: '0.6rem 1.25rem' }}

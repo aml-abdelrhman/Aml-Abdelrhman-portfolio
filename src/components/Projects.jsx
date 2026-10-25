@@ -23,10 +23,20 @@ import aljada from '../assets/images/aljada.png'
 import pioneers from '../assets/images/pioneers2.png' 
 import saudiRestaurant from '../assets/images/saudi restaurant.PNG'
 import AlAmmar from '../assets/images/al-ammar.png'
-
+import carslinkImg from '../assets/images/carslink.png'
 
 const projects = [
   // ── الأوائل الأربعة ──────────────────────────────────────────────────────
+  {
+    title: 'CarsLink Car Maintenance Platform',
+    img: carslinkImg,
+    tech: ['Laravel', 'PHP', 'MySQL', 'Next.js', 'TypeScript', 'Tailwind CSS', 'i18n (AR/EN, RTL)', 'REST API'],
+    category: 'Full-Stack',
+    badge: '⭐ Solo Developed',
+    description: 'A comprehensive bilingual (Arabic/English) car maintenance services platform in Saudi Arabia. Developed independently as a Full-Stack Monorepo project featuring a robust Laravel/PHP backend, MySQL database, REST APIs, and a high-performance Next.js/TypeScript frontend with customer and admin dashboards, tracking, and secure role-based authentication.',
+    demo: 'https://www.carslink.sa/',
+    code: 'https://github.com/aml-abdelrhman/cars',
+  },
   {
     title: 'Al-Ammar Family Heritage',
     img: AlAmmar,
@@ -185,15 +195,15 @@ const projects = [
     demo: 'https://aml-abdelrhman.github.io/Deliver-X/',
     code: 'https://github.com/aml-abdelrhman/Deliver-X.git',
   },
-  {
-    title: 'CRUDS Product System',
-    img: CRUDS,
-    tech: ['JavaScript', 'HTML', 'CSS'],
-    category: 'Web App',
-    description: 'Full CRUD functionality for seamless product handling with a clean interface.',
-    demo: 'https://aml-abdelrhman.github.io/CRUDS-SYSTEM/',
-    code: 'https://github.com/aml-abdelrhman/CRUDS-SYSTEM.git',
-  },
+  // {
+  //   title: 'CRUDS Product System',
+  //   img: CRUDS,
+  //   tech: ['JavaScript', 'HTML', 'CSS'],
+  //   category: 'Web App',
+  //   description: 'Full CRUD functionality for seamless product handling with a clean interface.',
+  //   demo: 'https://aml-abdelrhman.github.io/CRUDS-SYSTEM/',
+  //   code: 'https://github.com/aml-abdelrhman/CRUDS-SYSTEM.git',
+  // },
 ]
 
 const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))]

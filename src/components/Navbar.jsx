@@ -190,7 +190,7 @@ export default function Navbar() {
             </ScrollLink>
           ))}
           <a
-            href="Aml-Abdelrhman-CV.pdf"
+            href="aml_abdelrhman_cv_fullstack.pdf"
             download
             style={{ color: 'var(--accent)', fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}
           >
